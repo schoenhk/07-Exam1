@@ -164,7 +164,7 @@ def problem1b(point, win, width, height, color):
     # --------------------------------------------------------------------------
     point = rg.Point(point.x, point.y)
     point.attach_to(win)
-    ellipse = rg.Ellipse(200, 100)
+    ellipse = rg.Ellipse(height, width)
     ellipse.attach_to(win)
     win.render()
 
