@@ -2,8 +2,8 @@
 Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Valerie Galluzzi, Mark Hays,
-         Amanda Stouder, their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         Amanda Stouder, their colleagues and Hunter Schoenborn.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -89,9 +89,19 @@ def problem1a(rectangle, square, thickness, window):
       :type window:    rg.RoseWindow
     """
     # --------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # DONE: 2. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
+
+    rectangle.attach_to(window)
+    square.attach_to(window)
+    right_corner = rg.Point((rectangle.corner_1.x * .5) + (.5 * rectangle.corner_2.x), rectangle.corner_1.y)
+    left_corner = rg.Point(square.center.x, square.center.y)
+    line = rg.Line(right_corner, left_corner)
+    line.thickness = thickness
+    line.attach_to(window)
+
+    window.render()
 
 
 def run_test_problem1b():
@@ -152,7 +162,11 @@ def problem1b(point, win, width, height, color):
     # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # --------------------------------------------------------------------------
-
+    point = rg.Point(point.x, point.y)
+    point.attach_to(win)
+    ellipse = rg.Ellipse(200, 100)
+    ellipse.attach_to(win)
+    win.render()
 
 # ------------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
