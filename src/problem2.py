@@ -342,10 +342,12 @@ def problem2b(a, b, x):
     #                         that is DEFINED ABOVE.
     ############################################################################
     total = 0
-    for k in range(a, b):
+    for k in range(a, b + 1, x):
         if k >= x:
-            total = total + number_of_factors(k + 1)
-        return total
+            total = total + number_of_factors(k)
+        else:
+            total = 0
+    return total
 
 def run_test_problem2c():
     """ Tests the   problem2c   function. """
